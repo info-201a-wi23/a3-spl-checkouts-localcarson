@@ -3,84 +3,52 @@ title: "A3: SPL Library Checkouts"
 output: html_document
 ---
 
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+
+# source all R files
+source('a3.R')
+```
+
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
-
+For my project, I chose to analyze the data of what kind of checkouts were most popular in which years and months, because it is valuable to look at the type of ways in which media is being consumed. Looking to see if there is an increase or decrease in the amount of digital checkouts versus physical checkouts can speak to the direction in which media will be produced. Because book publishers are focused on creating the forms of media that are most likely to be consumed this data could be valuable in the process of product development.
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+The five relevant values of interest I am calculating are what year had the most total checkouts, what were the most popular kinds of Checkouts, an example being OverDrive, verses Horizon, verses Hoopla. Additionally, this will tell me what kind of checkout was most popular in each year. Next I will answer the question of which type of media, either audio or a physical book was borrowed more often which months saw the most borrowing between the two, to see if people would rather read or listen to a book and if the time of the year has an impact on that. Lastly, I will analyze if digital or hard copy books are borrowed more often throughout the whole dataset. 
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
+What I found from my calculations is that overall, physical books were borrowed more often. I also found out that OverDrive is the most popular source and that 2020 had the most total checkouts. Additionally, I found that books are generally checked out more often than audio books throughout the year, and that the winter and summer months were the most common time for checkouts. Finally, my final chart showed me that in the years 2020 and 2022, more digital copies of books were borrowed than physical.
 
 ### The Dataset
 
-- Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
+This data was collected by the Seattle Public Library. In this particular data, the only data that is included are books that were checked out more than 10 times a month. The data was collected based on checkouts both physical and digital, but does not include renewals.The data was collected because public libraries can gain insights into what their patrons are reading, or what topics are popular. They are also interested in finding out how frequently certain types of materials are being borrowed such as digital vs physical. This information can help libraries make  decisions about their collections and services. Ethical questions do you need to consider when working with this data are how this data could impact what kind of books a person would want to check out. If they know they are being document, they could be hesitant to check out a specific book. Some potential limitations with this data are that it does not take into account books that were checked out less that ten times a month as well as renewals. If a person renews a book for an extended amount of time, it would have an impact on how often that material could be borrowed since it is out of circulation. 
 
 
 ### First Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+```{r plot1,warning=FALSE}
+plot1
 ```
+
+
+I chose to use this style of line chart because I wanted to display three variables at a glance. This is a how R responds to a line chart with three inputs. The variables the chart is analyzing is which service was used most over and in which specific year was that service the most popular. The results the chart displays are which services were the most popular in a given year.
 
 ### Second Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r plot2,warning=FALSE}
+plot2
 ```
+
+
+The second chart displays the amount of usage of audio books against regular books. It also displays the time of the year where the most checkouts were taking place. I used an area chart here because it shows the density of usage throughout the year and overlays the two variables. It revealed that the majority of checkouts were regular books and the summer and winter seasons were the most popular times to borrow. 
 
 ### Your Choice
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r plot3,warning=FALSE}
+plot3
 ```
 
 
+The third plot is a bar graph that shows digital vs. hard copies of books based on the year. It revealed that the years 2020 and 2022 had more digital borrows than physical, but 2018, 2019, and 2021 had more physical than digital. 
